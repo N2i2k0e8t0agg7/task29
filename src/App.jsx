@@ -1,11 +1,11 @@
-import Users from "./Component/User"
+import User from "./Component/User";
 
 function App() {
-    return (
-        <>
-          <Users />
-        </>
-    )
+  return (
+    <>
+      <User />
+    </>
+  );
 }
 
-export default App
+export default App;

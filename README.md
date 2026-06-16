@@ -1,39 +1,29 @@
-# React Custom Hook - useFetch Assignment
-A React + Tailwind CSS project demonstrating the implementation of a custom hook using `useEffect`, `useState`, asynchronous API fetching, loading states, and error handling.
+# useFetch Custom Hook
+This project uses a custom hook called useFetch.
+The hook takes a URL and fetches data from that URL. It also keeps track of loading and error states.
 
-This project fetches user data from an external API and displays it in a modern responsive UI.
+### What I used
+* useState
+* useEffect
+* fetch API
+* Custom hooks
 
-# Features
-- Custom React Hook (`useFetch`)
-- API data fetching
-- Loading screen with delay
-- Error handling
-- Dynamic user cards
-- Responsive grid layout
-- Tailwind CSS styling
-- Reusable fetch logic
+### Files
+* useFetch.jsx → contains the custom hook.
+* User.jsx → displays the fetched users.
+* App.jsx → renders the User component.
 
-# Technologies Used
-- React
-- Vite
-- Tailwind CSS
-- JavaScript (ES6)
-- JSONPlaceholder API
+### How to run
+1. Install dependencies
+```
+npm install
+```
+2. Start the project
+```
+npm run dev
+```
+3. Open the link shown in the terminal (usually localhost:5173).
 
-# Concepts Practiced
-## React Concepts
-- Functional Components
-- Custom Hooks
-- useState
-- useEffect
-- Conditional Rendering
-- Props
-- Component Reusability
-
-## JavaScript Concepts
-- Async / Await
-- Fetch API
-- Try / Catch / Finally
-- Arrow Functions
-- Array Mapping
-- Destructuring
+### What I learned
+I learned how to create a custom hook and return multiple values from it. I also learned how loading and error states are handled
+while fetching data.

@@ -1,48 +1,48 @@
-import React from 'react'
-import useFetch from '../hooks/useFetch'
+import useFetch from "../hooks/useFetch";
 
-const Users = () => {
-    const {data, loading, error} = useFetch("https://jsonplaceholder.typicode.com/users");
-    if (loading) {
-        return (
-            <div className='min-h-screen bg-black flex justify-center items-center text-white text-2xl'>
-                Loading...
-            </div>
-        );
-    }
-    if (error) {
-        return (
-            <h1 className='min-h-screen bg-black flex justify-center items-center text-white text-2xl'>
-                {error}
-            </h1>
-        );
-    }
+function User() {
 
+  const { data, loading, error } = useFetch("https://jsonplaceholder.typicode.com/users");
+
+  if (loading) {
     return (
-        <div className='min-h-screen bg-black text-white p-10'>
-            <h1 className='text-white text-2xl font-bold text-center pb-5'>
-                Users Data
-            </h1>
-            <div className='grid grid-cols-3 gap-8'>
-                {data.map((user) => (
-                    <div key={user.id} className='bg-zinc-900 p-6 rounded-2xl border border-zinc-700 hover:scale-105 transition-all duration-300'>
-                        <h2 className='text-2xl font-bold text-cyan-400'>
-                            {user.name}
-                        </h2>
-                        <p className='mt-3'>
-                            <span className='font-bold'>Username:</span>{" "}{user.username}
-                        </p>
-                        <p className='mt-2'>
-                            <span className='font-bold'>Email:</span>{" "}{user.email}
-                        </p>
-                        <p className='mt-2'>
-                            <span className='font-bold'>City:</span>{" "}{user.address.city}
-                        </p>
-                    </div>
-                ))}
-            </div>
+      <div className="flex justify-center mt-20">
+        <p className="text-lg font-medium text-blue-600">
+          Loading data...
+        </p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex justify-center mt-20">
+        <p className="text-red-500 text-lg">
+          Error: {error}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+
+    <div className="max-w-3xl mx-auto mt-10 px-4">
+      <h1 className="text-3xl font-bold mb-6">
+        Users
+      </h1>
+      {data.map((user) => (
+        <div key={user.id} className="border p-4 mb-4 rounded">
+          <h2 className="text-xl font-semibold">
+            {user.name}
+          </h2>
+          <p className="text-gray-600">
+            {user.email}
+          </p>
         </div>
-    )
+      ))
+      }
+    </div>
+  );
 }
 
-export default Users
+export default User;
